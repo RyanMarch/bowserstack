@@ -4,6 +4,13 @@
 
 **Bowserstack** is the world's first AI-driven, hyper-converged Koopa-stacking infrastructure. Why settle for a boring layout when you can achieve peak Bowser density through our proprietary neural-stacking protocols?
 
+
+<p align="center">
+  <a href="https://ryanmarch.github.io/bowserstack/">
+    <img src="https://img.shields.io/badge/Launch%20Bowserstack-2D9B2D?style=for-the-badge&logo=super-mario&logoColor=D32F2F&labelColor=FFD700" alt="Launch Bowserstack">
+  </a>
+</p>
+
 ## Features
 
 - **AI-Enhanced Koopa Generation**: Our proprietary `addImages` neural engine predicts exactly when you need more Bowsers, delivering them with LLM-level precision.
@@ -16,7 +23,7 @@
 
 Getting started with Bowserstack is easy:
 
-1. Open Bowserstack.
+1. [Open Bowserstack](https://ryanmarch.github.io/bowserstack/)
 2. Scroll.
 3. Keep scrolling.
 
