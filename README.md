@@ -10,6 +10,7 @@
 - **Zero-Latency Cloud Stacking**: Experience the raw power of a single html file delivering maximum Bowser density through edge-optimized Koopa-compute.
 - **Cross-Castle Web3 Compatibility**: Works on any device that can render a PNG and execute basic JavaScript. Ready for the Koopa-verse.
 - **Quantum Anti-Scrollbar Architecture**: We've hidden the scrollbars because true Koopa Kings don't need visual aids to know they are descending into the depths of the blockchain.
+- **Next-Gen Real-Time Bowser Observability**: A hyper-scalable, cloud-native stack-tracking engine that leverages proprietary edge-compute to deliver millisecond-accurate Koopa-depth analytics with milestone-driven high-fidelity highlights.
 
 ## Installation
 
