@@ -1,30 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Bowserstack</title>
-    <meta name="description" content="Bowserstack" />
-    <meta name="author" content="Bowserstack" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="manifest" href="/icons/site.webmanifest">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#c2271b">
-    <link rel="shortcut icon" href="/icons/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="Bowserstack">
-    <meta name="application-name" content="Bowserstack">
-    <meta name="msapplication-TileColor" content="#b91d47">
-    <meta name="msapplication-config" content="/icons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
-  </head>
+<!-- Your website is in another castle! -->
 
-  <body>
-    <!-- Your content goes here -->
-    <img src="/bowserstack.png">
-    <!-- <script src="js/main.js"></script> -->
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Bowserstack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="shortcut icon" href="icons/favicon.ico">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <style>
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    *::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    html,
+    body {
+      -ms-overflow-style: none;
+      /* IE and Edge */
+      scrollbar-width: none;
+      /* Firefox */
+    }
+  </style>
+</head>
+
+<body style="margin: 0; overflow-x: hidden; display: flex; flex-direction: column; align-items: center;">
+  <div id="stack"></div>
+
+  <script>
+    const stack = document.getElementById('stack');
+    const imgSrc = 'bowserstack.png';
+
+    function addImages(count) {
+      for (let i = 0; i < count; i++) {
+        const img = document.createElement('img');
+        img.src = imgSrc;
+        img.style.maxWidth = '100vw';
+        img.style.display = 'block';
+        stack.appendChild(img);
+      }
+    }
+
+    // Initial load
+    addImages(10);
+
+    // Infinite scroll logic
+    window.addEventListener('scroll', () => {
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2000) {
+        addImages(5);
+      }
+    });
+  </script>
+</body>
+
 </html>
