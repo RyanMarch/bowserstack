@@ -1,30 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Bowserstack</title>
-    <meta name="description" content="Bowserstack" />
-    <meta name="author" content="Bowserstack" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
-    <link rel="manifest" href="/icons/site.webmanifest">
-    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#c2271b">
-    <link rel="shortcut icon" href="/icons/favicon.ico">
-    <meta name="apple-mobile-web-app-title" content="Bowserstack">
-    <meta name="application-name" content="Bowserstack">
-    <meta name="msapplication-TileColor" content="#b91d47">
-    <meta name="msapplication-config" content="/icons/browserconfig.xml">
-    <meta name="theme-color" content="#ffffff">
-    
-    <!-- <link rel="stylesheet" href="css/style.css" /> -->
-  </head>
+<!-- Your website is in another castle! -->
 
-  <body>
-    <!-- Your content goes here -->
-    <img src="/bowserstack.png">
-    <!-- <script src="js/main.js"></script> -->
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <title>Bowserstack</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
+  <link rel="shortcut icon" href="icons/favicon.ico">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <style>
+    *::-webkit-scrollbar { display: none; }
+    html, body { -ms-overflow-style: none; scrollbar-width: none; margin: 0; overflow-x: hidden; }
+    body { display: flex; flex-direction: column; align-items: center; }
+    #counter { position: fixed; bottom: 20px; right: 20px; background: rgba(0,0,0,.76); color: #fff; padding: 12px 20px; border-radius: 12px; font-family: system-ui, -apple-system, sans-serif; display: flex; flex-direction: column; align-items: flex-end; opacity: 0; transition: opacity .3s, transform .3s; z-index: 1000; pointer-events: none; box-shadow: 0 4px 15px rgba(0,0,0,.3); border: 1px solid rgba(255,255,255,.1); }
+    #counter.visible { opacity: 1; }
+    @keyframes glow { 0%, 100% { box-shadow: 0 4px 15px rgba(0,0,0,.3); transform: scale(1); border-color: rgba(255,255,255,.1); } 50% { box-shadow: 0 0 30px #FFBE21cc; transform: scale(1.15); border-color: #FFBE21cc; } }
+    .glow { animation: glow .8s cubic-bezier(.16, 1, 0.3, 1); }
+    .label { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; opacity: .8; margin-bottom: 2px; font-weight: 600; }
+    .value { font-size: 28px; font-weight: 800; line-height: 1; }
+    #stack img { width: 100%; max-width: 600px; height: auto; display: block; margin: 0 auto; }
+  </style>
+</head>
+<body>
+  <div id="stack"></div>
+  <div id="counter"><div class="label">Current Stack</div><div id="count" class="value">0</div></div>
+  <script>
+    const stack = document.getElementById('stack'), counter = document.getElementById('counter'), countDisplay = document.getElementById('count'), imgSrc = 'bowserstack.png';
+    let bowserHeight = 0, lastMilestone = 0;
+    const addImages = (n) => {
+      for (let i = 0; i < n; i++) {
+        const img = new Image();
+        img.src = imgSrc;
+        stack.appendChild(img);
+        if (i === 0 && !bowserHeight) img.onload = () => { bowserHeight = img.offsetHeight / 5; update(); };
+      }
+    };
+    const update = () => {
+      if (!bowserHeight) return;
+      const count = Math.floor(window.scrollY / bowserHeight);
+      if (count > 51) {
+        countDisplay.innerText = count.toLocaleString();
+        counter.classList.add('visible');
+        const milestone = Math.floor(count / 100);
+        if (milestone > lastMilestone) {
+          counter.classList.remove('glow');
+          void counter.offsetWidth;
+          counter.classList.add('glow');
+          lastMilestone = milestone;
+        }
+      } else {
+        counter.classList.remove('visible');
+        lastMilestone = 0;
+      }
+    };
+    addImages(20);
+    window.onscroll = () => {
+      update();
+      if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 2000) addImages(10);
+    };
+    window.onresize = () => {
+      const first = stack.querySelector('img');
+      if (first?.complete) bowserHeight = first.offsetHeight / 5;
+      update();
+    };
+  </script>
+</body>
 </html>
