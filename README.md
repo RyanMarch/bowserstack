@@ -6,7 +6,7 @@
 
 
 <p align="center">
-  <a href="https://ryanmarch.github.io/bowserstack/">
+  <a href="https://ryanmarch.github.io/bowserstack/" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Launch%20Bowserstack-2D9B2D?style=for-the-badge&logo=super-mario&logoColor=D32F2F&labelColor=FFD700" alt="Launch Bowserstack">
   </a>
 </p>
@@ -31,10 +31,8 @@ Getting started with Bowserstack is easy:
 
 Traditional verticality is a legacy paradigm. Bowserstack leverages a hyper-converged, AI-first approach to reptile stacking, disrupting the very foundation of how we perceive King Koopa. By utilizing a decentralized, infinitely-scalable PNG-as-a-Service model, we are empowering the next generation of Mushroom Kingdom developers to reach peak Bowser density.
 
-## License
-
-This project is licensed under the Mushroom Kingdom Public License. Do not use for actual browser testing, unless you want Bowser to breathe fire on your CSS.
+Note: Do not use for actual browser testing.
 
 ---
 
-*This is a joke project. No turtles were harmed in the making of this stack.*
+*This project is for fun. No turtles were harmed in the making of this stack.*
