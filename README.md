@@ -6,7 +6,7 @@
 
 
 <p align="center">
-  <a href="https://ryanmarch.github.io/bowserstack/" target="_blank" rel="noopener noreferrer">
+  <a href="https://bowserstack.ryanmarch.me" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Launch%20Bowserstack-2D9B2D?style=for-the-badge&logo=super-mario&logoColor=D32F2F&labelColor=FFD700" alt="Launch Bowserstack">
   </a>
 </p>
@@ -23,7 +23,7 @@
 
 Getting started with Bowserstack is easy:
 
-1. [Open Bowserstack](https://ryanmarch.github.io/bowserstack/)
+1. [Open Bowserstack](https://bowserstack.ryanmarch.me/)
 2. Scroll.
 3. Keep scrolling.
 
